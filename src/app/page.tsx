@@ -18,8 +18,6 @@ const Home = () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id") ?? "";
 
-  console.log({ id });
-
   const { address, chainId, signer } = useActiveWeb3();
   const { signMessageAsync } = useSignMessage();
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
@@ -42,6 +40,12 @@ const Home = () => {
       setIsLoading(false);
     }
   };
+
+  React.useEffect(() => {
+    if (address && chainId && signer) {
+      handleSignMessaage();
+    }
+  }, [address, chainId, signer]);
 
   const handleClick = () => {
     if (!address || !chainId || !signer) {
