@@ -16,7 +16,7 @@ const queryClient = new QueryClient();
 const RainbowProvider = ({ children }: { children: React.ReactNode }) => {
   const CustomAvatar: AvatarComponent = ({ address, ensImage, size }) => (
     <Image
-      src={"/favicon.svg"}
+      src={"/favicon.jpg"}
       width={size}
       height={size}
       alt="avatar"

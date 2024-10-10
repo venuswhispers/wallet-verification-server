@@ -41,11 +41,11 @@ const Home = () => {
     }
   };
 
-  React.useEffect(() => {
-    if (address && chainId && signer) {
-      handleSignMessaage();
-    }
-  }, [address, chainId, signer]);
+  // React.useEffect(() => {
+  //   if (address && chainId && signer) {
+  //     handleSignMessaage();
+  //   }
+  // }, [address, chainId, signer]);
 
   const handleClick = () => {
     if (!address || !chainId || !signer) {
@@ -56,8 +56,8 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-black w-full h-screen">
-      <div className="flex justify-end mt-10 px-5">
+    <div className="bg-black w-full pt-20 h-screen bg-[url('/bg.jpg')] bg-center bg-cover  bg-no-repeat">
+      <div className="flex justify-end px-8">
         <ConnectButton />
       </div>
       <div className="justify-center mt-20 px-5 w-full">
@@ -72,7 +72,7 @@ const Home = () => {
           <Button
             onClick={handleClick}
             color="primary"
-            className="w-60 h-20 text-xl bg-green-600"
+            className="w-60 h-20 text-xl bg-green-900"
           >
             {isLoading ? "Signing..." : <span>Sign Message</span>}
             {isLoading ? (
